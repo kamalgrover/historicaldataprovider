@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'com.diffplug.spotless' version '6.21.0'
 }
 
 group = 'org.example'
@@ -28,4 +29,12 @@ application {
 }
 test {
     useJUnitPlatform()
+}
+spotless {
+    java {
+        // apply Google’s formatter
+        googleJavaFormat('1.17.0') // or latest
+        // optional: license header, import ordering, etc.
+        // licenseHeaderFile 'config/spotless/license-header.txt'
+    }
 }
