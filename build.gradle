@@ -1,40 +1,40 @@
 plugins {
-    id 'java'
-    id 'application'
-    id 'com.diffplug.spotless' version '6.21.0'
+  id 'java'
+  id 'application'
+  id 'com.diffplug.spotless' version '6.21.0'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-    // Kite Connect Java client
-    implementation 'com.zerodhatech.kiteconnect:kiteconnect:3.5.0'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+  // Kite Connect Java client
+  implementation 'com.zerodhatech.kiteconnect:kiteconnect:3.5.0'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
 
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+  testImplementation platform('org.junit:junit-bom:5.10.0')
+  testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 application {
-    // your fully‐qualified main class
-    mainClass = 'org.example.Main'
+  // your fully‐qualified main class
+  mainClass = 'org.example.Application'
 }
 test {
-    useJUnitPlatform()
+  useJUnitPlatform()
 }
 spotless {
-    java {
-        // apply Google’s formatter
-        googleJavaFormat('1.17.0') // or latest
-        // optional: license header, import ordering, etc.
-        // licenseHeaderFile 'config/spotless/license-header.txt'
-    }
+  java {
+    // apply Google’s formatter
+    googleJavaFormat('1.17.0') // or latest
+    // optional: license header, import ordering, etc.
+    // licenseHeaderFile 'config/spotless/license-header.txt'
+  }
 }
