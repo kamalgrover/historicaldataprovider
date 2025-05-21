@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Kite Connect Java client
+    implementation 'com.zerodhatech.kiteconnect:kiteconnect:3.5.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+application {
+    // your fully‐qualified main class
+    mainClass = 'org.example.Main'
+}
+test {
+    useJUnitPlatform()
+}
